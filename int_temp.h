@@ -19,7 +19,7 @@ signals:
 public slots:
 
     void pushButton();
-
+    void isChecked();
 
 private:
     Ui::Int_Temp *ui;
