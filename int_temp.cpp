@@ -8,22 +8,17 @@ Int_Temp::Int_Temp(QWidget *parent)
     , ui(new Ui::Int_Temp)
 {
     ui->setupUi(this);
-    //emit mySignal();
-    //connect(ui->IOLink1, &QPushButton::clicked, this, [this](){ui->label1->setText("ffff");});
-    //connect(ui->IOLink1, &QPushButton::clicked, this, &QPushButton::setEnabled);
+    //emit pushButton();
+
     connect(ui->IOLink1, &QPushButton::clicked, this, &Int_Temp::pushButton);
     connect(ui->IOLink2, &QPushButton::clicked, this, &Int_Temp::pushButton);
     connect(ui->IOLink3, &QPushButton::clicked, this, &Int_Temp::pushButton);
     connect(ui->IOLink4, &QPushButton::clicked, this, &Int_Temp::pushButton);
     connect(ui->Link, &QPushButton::clicked, this, &Int_Temp::isChecked);
+
     //connect(ui->IOLink1, &QPushButton::clicked, this, [this](){ui->temp1->setText("fff");});
-    //connect(ui->checkBox, &QCheckBox::, this, &Int_Temp::enableButton);
-
-    //ui->pushButton->setDisabled(true);
-
     //connect(ui->IOLink1, &QPushButton::clicked, this, [this, a](){ui->label->setText(QString("%1").arg(a));});
 }
-
 
 Int_Temp::~Int_Temp()
 {
@@ -35,6 +30,8 @@ unsigned int DataOut[2] = {};
 void Int_Temp::pushButton()
 {
     unsigned int DataIn[2] = {0x1234ABCD, 0x12345678};
+    //res1 = juniorWord(Data[0])
+    //res2 = seniorWord(Data[1])
     unsigned int res1 = DataIn[0] * 0xffff;
     unsigned int res2 = (DataIn[0] >> 16) * 0xffff;
     unsigned int res3 = DataIn[1] * 0xffff;
