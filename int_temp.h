@@ -17,7 +17,6 @@ public:
 signals:
     void mySignal();
 public slots:
-
     void pushButton();
     void isChecked();
 
