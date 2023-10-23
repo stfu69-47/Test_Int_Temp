@@ -2,6 +2,8 @@
 #include "./ui_int_temp.h"
 #include <QDebug>
 #include <QCheckBox>
+#include <QDesktopWidget>
+#include <QMainWindow>
 
 Int_Temp::Int_Temp(QWidget *parent)
     : QMainWindow(parent)
@@ -26,6 +28,13 @@ Int_Temp::~Int_Temp()
 }
 
 unsigned int DataOut[2] = {};
+
+//QDesktopWidget dw;
+//QMainWindow w;
+
+//int x = dw.width()*0.7;
+//int y = dw.height()*0.7;
+
 
 void Int_Temp::pushButton()
 {
